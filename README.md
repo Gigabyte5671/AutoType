@@ -10,7 +10,7 @@ Include:
 ```html
 <script src="https://gigabyte5671.github.io/AutoType/dist/autotype.min.js" type="text/javascript"></script>
 ```
-Or download the zip from the releases page.  
+Or download the files you want from the releases page.  
   
 To add the effect to a text element, call the AutoType() function with arguments for the text element's ID, the string you want typed, and optionally a callback function for when the effect has finished.  
 

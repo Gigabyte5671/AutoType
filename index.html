@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AutoType JS</title>
+    <meta property="og:title" content="AutoType JS">
+    <meta property="og:site_name" content="AutoType JS">
+    <meta name="description" content="A simple auto-typing/typewriter effect written in vanilla JS.">
+    <meta property="og:description" content="A simple auto-typing/typewriter effect written in vanilla JS.">
+    <meta name="author" content="Gigabyte5671">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="cover.webp">
+    <meta name="twitter:image:alt" content="site cover image">
+    <meta name="theme-color" content="#2D2D2D">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="autotype.min.css">
+    <link rel="shortcut icon" href="favicon.svg">
+    <script type="text/javascript" src="autotype.min.js" defer></script>
+    <script type="text/javascript" src="example.js" defer></script>
+  </head>
+  
+  <body>
+    <main>
+      <img src="favicon.svg" draggable="false" class="logo">
+      <h1 id="elem" class="autotype_horizontal_cursor"></h1>
+      <h3>A simple auto-typing/typewriter effect written in vanilla JS.</h3>
+      <p>Type your own text here:</p>
+      <input type="text" spellcheck="false" id="usertext" name="usertext" placeholder="..." value="AutoType JS">
+      <input type="submit" value="Go" onclick="usertext()">
+      
+      <a id="github_link" href="https://github.com/Gigabyte5671/DOM-Particles" target="_blank"><img src="https://simpleicons.org/icons/github.svg" draggable="false"></a>
+    </main>
+  </body>
+</html>

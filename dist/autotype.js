@@ -1,16 +1,33 @@
 var AutoTypeObjects = [];
-function AutoType(elementID, word = "undefined", callback = function(){}){
-  if(word == ""){word = "undefined"}
-  var new_retype = {"word":word,"element":document.getElementById(elementID),"count":0};
-  AutoTypeObjects.push(new_retype);
-  var pos = AutoTypeObjects.length - 1;
-  var i = 0;
-  var intervalID = window.setInterval(function(){
-    AutoTypeObjects[pos]["count"]++;
-    AutoTypeObjects[pos]["element"].innerHTML = AutoTypeObjects[pos]["word"].substr(0,AutoTypeObjects[pos]["count"]);
-    if(++i === word.length){
-      window.clearInterval(intervalID);
-      callback();
-    }
-  }, 50);
+var AutoBackspaceObjects = [];
+
+function AutoType(elementID, word = "undefined", delay = 80, callback = function(){}){
+	if(word == ""){word = "undefined"}
+	var new_retype = {"word":word,"element":document.getElementById(elementID),"count":0};
+	AutoTypeObjects.push(new_retype);
+	var pos = AutoTypeObjects.length - 1;
+	var i = 0;
+	var intervalID = window.setInterval(function(){
+		AutoTypeObjects[pos]["count"]++;
+		AutoTypeObjects[pos]["element"].innerHTML = AutoTypeObjects[pos]["word"].substr(0,AutoTypeObjects[pos]["count"]);
+		if(++i === word.length){
+			window.clearInterval(intervalID);
+			callback();
+		}
+	}, delay);
+}
+
+function AutoBackspace(elementID, delay = 50, callback = function(){}){
+	let new_retype = {"word":document.getElementById(elementID).innerHTML,"element":document.getElementById(elementID),"count":document.getElementById(elementID).innerHTML.length};
+	AutoBackspaceObjects.push(new_retype);
+	let pos = AutoBackspaceObjects.length - 1;
+	let i = AutoBackspaceObjects[pos]["word"].length;
+	let intervalID = window.setInterval(function(){
+		AutoBackspaceObjects[pos]["count"]--;
+		AutoBackspaceObjects[pos]["element"].innerHTML = AutoBackspaceObjects[pos]["word"].substr(0,AutoBackspaceObjects[pos]["count"]);
+		if(--i === 0){
+			window.clearInterval(intervalID);
+			callback();
+		}
+	}, delay);
 }

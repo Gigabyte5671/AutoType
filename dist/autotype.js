@@ -9,7 +9,6 @@ function AutoType(elementID, word = "undefined", delay = 80, callback = function
 	let i = 0;
 	let intervalID = window.setInterval(function(){
 		AutoTypeObjects[pos]["count"]++;
-		console.log(AutoTypeObjects[pos]["word"]);
 		AutoTypeObjects[pos]["element"].innerHTML = AutoTypeObjects[pos]["word"].substr(0,AutoTypeObjects[pos]["count"]);
 		if(++i === word.length){
 			window.clearInterval(intervalID);

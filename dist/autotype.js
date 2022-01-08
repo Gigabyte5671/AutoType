@@ -1,14 +1,15 @@
-var AutoTypeObjects = [];
-var AutoBackspaceObjects = [];
+let AutoTypeObjects = [];
+let AutoBackspaceObjects = [];
 
 function AutoType(elementID, word = "undefined", delay = 80, callback = function(){}){
 	if(word == ""){word = "undefined"}
-	var new_retype = {"word":word,"element":document.getElementById(elementID),"count":0};
+	let new_retype = {"word":word,"element":document.getElementById(elementID),"count":0};
 	AutoTypeObjects.push(new_retype);
-	var pos = AutoTypeObjects.length - 1;
-	var i = 0;
-	var intervalID = window.setInterval(function(){
+	let pos = AutoTypeObjects.length - 1;
+	let i = 0;
+	let intervalID = window.setInterval(function(){
 		AutoTypeObjects[pos]["count"]++;
+		console.log(AutoTypeObjects[pos]["word"]);
 		AutoTypeObjects[pos]["element"].innerHTML = AutoTypeObjects[pos]["word"].substr(0,AutoTypeObjects[pos]["count"]);
 		if(++i === word.length){
 			window.clearInterval(intervalID);
@@ -27,6 +28,7 @@ function AutoBackspace(elementID, delay = 50, callback = function(){}){
 		AutoBackspaceObjects[pos]["element"].innerHTML = AutoBackspaceObjects[pos]["word"].substr(0,AutoBackspaceObjects[pos]["count"]);
 		if(--i === 0){
 			window.clearInterval(intervalID);
+			AutoTypeObjects[pos]["element"].innerHTML = "&ZeroWidthSpace;";
 			callback();
 		}
 	}, delay);

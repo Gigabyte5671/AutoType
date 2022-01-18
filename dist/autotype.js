@@ -27,7 +27,7 @@ function AutoBackspace(elementID, delay = 50, callback = function(){}){
 		AutoBackspaceObjects[pos]["element"].innerHTML = AutoBackspaceObjects[pos]["word"].substr(0,AutoBackspaceObjects[pos]["count"]);
 		if(--i === 0){
 			window.clearInterval(intervalID);
-			AutoTypeObjects[pos]["element"].innerHTML = "&ZeroWidthSpace;";
+			(typeof AutoTypeObjects[pos] !== 'undefined' ? AutoTypeObjects[pos]["element"].innerHTML = "&ZeroWidthSpace;" : false);
 			callback();
 		}
 	}, delay);

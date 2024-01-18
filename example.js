@@ -1,6 +1,6 @@
 AutoType("elem", "AutoType JS");
 
-function usertext(){
+function type () {
 	AutoBackspace("elem").then(() =>{
 		AutoType("elem", document.getElementById("usertext").value);
 	});

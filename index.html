@@ -27,8 +27,10 @@
 			<h1 id="elem" class="autotype_horizontal_cursor"></h1>
 			<h3>A simple auto-typing/typewriter effect written in vanilla JS.</h3>
 			<p>Type your own text here:</p>
-			<input type="text" spellcheck="false" id="usertext" name="usertext" placeholder="..." value="AutoType JS">
-			<input type="submit" value="Go" onclick="usertext()">
+			<form action="" onsubmit="event.preventDefault();type()">
+				<input type="text" spellcheck="false" id="usertext" name="usertext" placeholder="..." value="AutoType JS">
+				<input type="submit" value="Go">
+			</form>
 			
 			<a id="github_link" href="https://github.com/Gigabyte5671/AutoType" target="_blank"><img src="https://simpleicons.org/icons/github.svg" draggable="false"></a>
 		</main>

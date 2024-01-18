@@ -12,15 +12,29 @@ Include:
 ```
 Or download the files you want from the releases page.  
   
-To add the effect to a text element, call the `AutoType()` function with arguments for the text element's ID, the string you want typed, the delay between typed characters in ms, and optionally a callback function for when the effect has finished.  
+To add the effect to an element, call the `AutoType()` function with the following arguments:
+- A reference to the element, or its ID.
+- The string you want typed.
+- And optionally, the delay (in ms) between typed characters.
 
 ```javascript
-AutoType("element_ID", "Your Text Here", character_delay, <optional> callback);
+AutoType("element_ID", "Your Text Here", character_delay);
 ```
-`AutoBackspace()` can also be called with the same arguments (except the string to be typed) to get a backspacing effect:  
 
+`AutoBackspace()` can also be called with the same arguments (except the string to be typed) to get a backspacing effect:  
 ```javascript
-AutoBackspace("element_ID", character_delay, <optional> callback);
+AutoBackspace("element_ID", character_delay);
+```
+
+Both of these functions can be `await`ed so you can run your own code after the effects have finished.
+```javascript
+await AutoBackspace("element_ID");
+
+// Or
+
+AutoBackspace("element_ID").then(() => {
+	// Do something awesome
+});
 ```
   
 ### CSS:
@@ -32,7 +46,6 @@ You can also use autotype.css to add a blinking cursor to the end of your autoty
 <h1 id="elem" class="autotype_horizontal_cursor">Horizontal cursor!</h1>
 <h1 id="elem" class="autotype_vertical_cursor">Vertical cursor!</h1>
 ```
-  
-### Notes:
-- Autotype CSS will set the text element's position to relative.  
-- This library creates two global variables "AutoTypeObjects" and "AutoBackspaceObjects".
+
+> [!NOTE]  
+> Using either of these classes will set the text element's position to relative.

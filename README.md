@@ -1,5 +1,6 @@
 # AutoType JS
 A simple auto-typing/typewriter effect written in vanilla JS.  
+Just 470 bytes :sparkles:
   
 [Demo](https://autotype.zakweb.dev/)
 

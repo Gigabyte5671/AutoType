@@ -8,7 +8,7 @@ A simple auto-typing/typewriter effect written in vanilla JS.
 Include:
 
 ```html
-<script src="https://gigabyte5671.github.io/AutoType/dist/autotype.min.js" type="text/javascript"></script>
+<script src="https://autotype.zakweb.dev/dist/autotype.min.js" type="text/javascript"></script>
 ```
 Or download the files you want from the releases page.  
   

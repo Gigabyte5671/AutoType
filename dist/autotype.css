@@ -13,7 +13,8 @@
   font-size: inherit;
   background-color: currentColor;
   animation: autotype_cursor_blink 0.8s linear infinite;
-}.autotype_vertical_cursor{
+}
+.autotype_vertical_cursor{
   position: relative;
 }
 .autotype_vertical_cursor::after{

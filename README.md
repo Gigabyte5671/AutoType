@@ -43,8 +43,8 @@ You can also use autotype.css to add a blinking cursor to the end of your autoty
 ```html
 <link rel="stylesheet" href="https://gigabyte5671.github.io/AutoType/dist/autotype.min.css">  
   
-<h1 id="elem" class="autotype_horizontal_cursor">Horizontal cursor!</h1>
-<h1 id="elem" class="autotype_vertical_cursor">Vertical cursor!</h1>
+<h1 id="elem" class="autotype_horizontal_cursor">Horizontal cursor!_</h1>
+<h1 id="elem" class="autotype_vertical_cursor">Vertical cursor!|</h1>
 ```
 
 > [!NOTE]  

@@ -1,5 +1,11 @@
 const wait = (delay) => new Promise((resolve) => window.setTimeout(resolve, delay));
 
+/**
+ * Type some text.
+ * @param {string | Element} element The element to type the text into.
+ * @param {string} text The text to type.
+ * @param {number?} delay The delay between characters.
+ */
 async function AutoType (element, text, delay = 80) {
 	const e = typeof element === 'string' ? document.getElementById(element) : element;
 	e.innerHTML = "&ZeroWidthSpace;";
@@ -9,6 +15,11 @@ async function AutoType (element, text, delay = 80) {
 	}
 }
 
+/**
+ * Backspace some text.
+ * @param {string | Element} element The element to remove the text from. 
+ * @param {number?} delay The delay between characters.
+ */
 async function AutoBackspace (element, delay = 50) {
 	const e = typeof element === 'string' ? document.getElementById(element) : element;
 	for (const _ of e.innerHTML) {
